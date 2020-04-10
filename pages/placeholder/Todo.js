@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import axios from 'axios';
 
 class Todo extends Component {
-
      static async getInitialProps({query}){
         const resp = await axios(`https://jsonplaceholder.typicode.com/todos/${query.id}`);
         return {todo: resp.data}

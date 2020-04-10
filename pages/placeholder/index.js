@@ -16,7 +16,7 @@ class Index extends Component {
             <div>
                 <Navbar/>
                 {
-                    dopa.map((item,index) => <Link href={`/placeholder/Todo?id=${item.id}`} as={`/placeholder/Todos/${item.id}`} ><a key={index}>{item.title}</a></Link>)
+                    dopa.map((item,index) => <Link href={`/placeholder/Todo?id=${item.id}`} as={`/placeholder/${item.id}`} ><a key={index}>{item.title}</a></Link>)
                 }
             </div>
         );
