@@ -7,16 +7,16 @@ class Index extends Component {
 
     static async getInitialProps(props){
         const response = await axios('https://jsonplaceholder.typicode.com/todos');
-        return  {todos : response.data}
+        return  {dopa : response.data}
     }
 
     render() {
-        const { todos } = this.props;
+        const { dopa } = this.props;
         return (
             <div>
                 <Navbar/>
                 {
-                    todos.map((item,index) => <Link href={`/placeholder/${item.id}`} ><a key={index}>{item.title}</a></Link>)
+                    dopa.map((item,index) => <Link href={`/placeholder/Todo?id=${item.id}`} as={`/placeholder/Todos/${item.id}`} ><a key={index}>{item.title}</a></Link>)
                 }
             </div>
         );
