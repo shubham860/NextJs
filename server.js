@@ -12,14 +12,13 @@ app.prepare()
 .then(() => {
     const server = express();
 
-    server.get('/user/:name',(req,res) => {
+    server.get('/user/:x',(req,res) => {
         app.render(req,res,'/user', {name : req.params.name} )
     });
 
-    server.get('placeholder/:data',(req,res) => {
-        app.render(req,res,'/placeholder',{todo : req.params.todo})
+    server.get('/placeholder/:y',(req,res) => {
+        app.render(req,res,'/placeholder',{data : req.params.data})
     });
-
     server.get('*',(req,res) => {
         return handle(req,res)
     });
